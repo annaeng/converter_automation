@@ -7,9 +7,9 @@ When(/^I click on Got it button$/) do
   find_element(id:"button1").click
 end
 
-Then(/^I land on Area screen$/) do |value|
-  #text("Area")
-  find_element(id:"toolbar").find_element(xpath: "//android.widget.TextView[@text='Area']").click
+Then(/^I land on Area screen$/) do #|value|
+  text("Area")
+  #find_element(id:"toolbar").find_element(xpath: "//android.widget.TextView[@text='Area']").click
 end
 
 When(/^I click on Swap button$/) do
@@ -61,4 +61,9 @@ end
 
 When(/^I select "([^"]*)" from left column$/) do |value|
   find_element(id:"radio_group_from").find_element(xpath: "//android.widget.RadioButton[@text='#{value}']").click
+end
+
+
+When(/^I select "([^"]*)" from right column$/) do |value|
+  find_element(id:"radio_group_to").find_element(xpath: "//android.widget.RadioButton[@text='#{value}']").click
 end
