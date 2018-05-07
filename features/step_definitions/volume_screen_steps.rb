@@ -10,12 +10,11 @@ Then(/^I see app menu$/) do
 end
 
 
-And(/^I select (.*) from menu$/) do |value|
+And(/^I select "([^"]*)" from menu$/) do |value|
   select_menu_item(value)
 end
 
-Then(/^I land on (.*) screen$/) do |value|
+Then(/^I land on "([^"]*)" screen$/) do |value|
   find_element(id:"toolbar").find_element(xpath:"//android.widget.TextView[@text='#{value}']")
 end
-
 
